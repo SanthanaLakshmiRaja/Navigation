@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+<variable
+    name="quiz"
+    type="com.example.navigation.GameFragment" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/teal_200"
+        tools:context=".GameFragment">
+
+
+        <TextView
+            android:id="@+id/title_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="124dp"
+            android:layout_marginBottom="32dp"
+            android:gravity="center_horizontal"
+            android:text="YOUR QUESTION ARE HERE !"
+            android:textColor="#f00"
+            android:textSize="20sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintBottom_toTopOf="@+id/frameLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="409dp"
+            android:layout_height="227dp"
+            android:layout_marginTop="45dp"
+            android:layout_marginBottom="32dp"
+            android:orientation="vertical"
+
+            app:layout_constraintBottom_toTopOf="@+id/viewscore_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frameLayout">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+
+            <TextView
+                android:id="@+id/ans1textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center_horizontal"
+                android:text="@{quiz.Answers[0]}"
+                android:layout_marginBottom="12dp"
+                android:textColor="@color/purple_500"
+                android:textSize="20sp"
+                android:textStyle="bold|italic" />
+
+            <TextView
+                android:id="@+id/ans2textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center_horizontal"
+                android:text="@{quiz.Answers[1]}"
+                android:layout_marginBottom="12dp"
+                android:textColor="@color/purple_500"
+                android:textSize="20sp"
+                android:textStyle="bold|italic" />
+
+            <TextView
+                android:id="@+id/ans3textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center_horizontal"
+                android:text="@{quiz.Answers[2]}"
+                android:textColor="@color/purple_500"
+                android:textSize="20sp"
+                android:layout_marginBottom="12dp"
+                android:textStyle="bold|italic"
+                tools:layout_editor_absoluteX="4dp"
+                tools:layout_editor_absoluteY="379dp" />
+
+            <TextView
+                android:id="@+id/ans4textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center_horizontal"
+                android:text="@{quiz.Answers[3]}"
+                android:layout_marginBottom="12dp"
+                android:textColor="@color/purple_500"
+                android:textSize="20sp"
+                android:textStyle="bold|italic" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/viewscore_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="32dp"
+            android:text="VIEW SCORE"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/restart_button" />
+
+        <Button
+            android:id="@+id/restart_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="64dp"
+            android:layout_marginBottom="32dp"
+            android:text="RESTART"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/viewscore_button"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <FrameLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="111dp"
+            android:layout_marginTop="66dp"
+            android:layout_marginBottom="32dp"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_textView">
+
+
+            <TextView
+                android:id="@+id/questiontextView"
+                android:layout_width="match_parent"
+                android:layout_height="106dp"
+                android:layout_marginTop="54dp"
+                android:background="@color/white"
+                android:gravity="center_horizontal"
+                android:text="@{quiz.currentquestion.question}"
+                android:textColor="@color/purple_500"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                app:layout_constraintBottom_toTopOf="@+id/frameLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title_textView"
+                tools:ignore="MissingConstraints" />
+        </FrameLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
